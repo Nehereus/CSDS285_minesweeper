@@ -4,10 +4,10 @@
         <body>
             <v-layout justify-center>
                 <v-container>
-                    <div class="window" :style="{ 'width': rowNumber * 24 + 100 + 'px' }">
+                    <div class="window" :style="{ 'width': rowNumber * 24 + 130 + 'px' }">
                         <div class="title-bar">
                             <div class="title-bar-text">
-                                <img src="../public/img/mine-menu-icon.png"> </img>Minesweeper
+                                <img src="../public/img/mine-menu-icon.png"> Minesweeper
                             </div>
                             <div class="title-bar-controls">
                                 <button aria-label="Minimize"></button>
@@ -218,14 +218,14 @@ export default {
                     if (this.grid[col + a] != null && this.grid[row + b] != null && (a != 0 || b != 0) &&
                             this.$refs[this.grid[col + a][row + b].id][0].notRevealed === true
                         ) {
-                            
+
                     flagCount += this.$refs[this.grid[col + a][row + b].id][0].isFlaged ? 1 : 0;
                         }
                 }
             }
             console.log(flagCount);
-            
-           
+
+
             if (col > -1 && row > -1 && col < this.rowNumber && row < this.rowNumber) {
                 for (let a = -1; a < 2; a++) {
                     for (let b = -1; b < 2; b++) {
